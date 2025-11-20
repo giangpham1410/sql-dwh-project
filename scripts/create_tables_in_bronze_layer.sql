@@ -58,3 +58,14 @@ CREATE TABLE bronze.stg_erp_px_cat_g1v2 (
 	, subcat VARCHAR(50)
 	, maintenance VARCHAR(5)
 );
+
+CREATE TABLE IF NOT EXISTS bronze.etl_log (
+    id SERIAL PRIMARY KEY,
+    tbl_name TEXT,
+    start_time TIMESTAMP,
+    end_time TIMESTAMP,
+    duration INTERVAL,
+    rows_loaded INT,
+    status TEXT,          -- 'SUCCESS' hoặc 'ERROR'
+    error_message TEXT
+);
