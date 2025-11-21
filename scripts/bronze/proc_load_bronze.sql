@@ -1,7 +1,14 @@
 /*
-Loads raw data from a CSV source into the bronze layer.
-Performs bulk insert with basic validation.
-Writes execution status, row counts, errors, and timestamps to etl_log for traceability.
+Store Procedure: Load Bronze Layer (Source -> Bronze Layer)
+===========================================================
+Purpose:
+- Loads raw data from a CSV source into the bronze layer.
+- Performs bulk insert with basic validation.
+- Writes execution status, row counts, errors, and timestamps to etl_log for traceability.
+===========================================================
+Usage example:
+	CALL bronze.proc_load_bronze();
+===========================================================
 */
 
 CREATE OR REPLACE PROCEDURE bronze.proc_load_bronze()
